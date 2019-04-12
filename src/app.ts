@@ -1,5 +1,6 @@
 import * as express from 'express';
 import * as line from '@line/bot-sdk';
+import { songFlexMessage } from './templates/flexMessage/songs';
 
 const LINE_CONFIG = {
   channelAccessToken: process.env.LINE_CHANNEL_ACCESS_TOKEN || '',

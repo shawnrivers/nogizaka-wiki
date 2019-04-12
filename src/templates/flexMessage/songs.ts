@@ -1,4 +1,4 @@
-const songFlexMessage = {
+export const songFlexMessage = {
   type: 'bubble',
   hero: {
     type: 'image',
