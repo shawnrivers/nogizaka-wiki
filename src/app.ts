@@ -17,7 +17,7 @@ server.post('/webhook', line.middleware(LINE_CONFIG), (request, response) => {
     console.log('event:', event);
     lineClient.replyMessage(event.replyToken, {
       type: 'text',
-      text: 'Hello, world',
+      text: 'Hello, world!',
     });
   }
 });
