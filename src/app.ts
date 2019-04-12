@@ -6,9 +6,6 @@ const LINE_CONFIG = {
   channelSecret: process.env.LINE_CHANNEL_SECRET || '',
 };
 
-console.log('LINE_CHANNEL_ACCESS_TOKEN:', process.env.LINE_CHANNEL_ACCESS_TOKEN);
-console.log('LINE_CHANNEL_SECRET:', process.env.LINE_CHANNEL_SECRET);
-
 const lineClient = new line.Client(LINE_CONFIG);
 
 const server = express();
@@ -19,8 +16,9 @@ server.post('/webhook', line.middleware(LINE_CONFIG), (request, response) => {
   for (const event of request.body.events) {
     console.log('event:', event);
     lineClient.replyMessage(event.replyToken, {
-      type: 'text',
-      text: 'Hello, world!',
+      type: 'flex',
+      altText: '帰り道は遠回りしたくなる',
+      contents: songFlexMessage as any,
     });
   }
 });
