@@ -6,6 +6,9 @@ const LINE_CONFIG = {
   channelSecret: process.env.LINE_CHANNEL_SECRET || '',
 };
 
+console.log('LINE_CHANNEL_ACCESS_TOKEN:', process.env.LINE_CHANNEL_ACCESS_TOKEN);
+console.log('LINE_CHANNEL_SECRET:', process.env.LINE_CHANNEL_SECRET);
+
 const lineClient = new line.Client(LINE_CONFIG);
 
 const server = express();
