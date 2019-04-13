@@ -9,6 +9,7 @@ const getSongItem = (number: number, title: string, type: string, focusPerformer
   let titleBlock: any[] = [{
     "type": "text",
     "text": title,
+    "weight": "bold",
     "wrap": true,
     "size": SIZE.SM,
     "color": COLOR.Gray00
