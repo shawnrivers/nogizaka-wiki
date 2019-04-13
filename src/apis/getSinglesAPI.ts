@@ -1,8 +1,8 @@
-import { SingleResponse, CdSong } from './types/SinglesResponseTypes';
-import { ISingle } from '../models/ISingle';
-import * as request from 'request-promise';
-import { APIResponseSongType, SongType } from '../utils/constants';
-import { ICdSong } from '../models/ICd';
+import { SingleResponse, CdSong } from "./types/SinglesResponseTypes";
+import { ISingle } from "../models/ISingle";
+import * as request from "request-promise";
+import { APIResponseSongType, SongType } from "../utils/constants";
+import { ICdSong } from "../models/ICd";
 
 const convertSongType = (songType: APIResponseSongType): SongType => {
   switch (songType) {
@@ -61,13 +61,13 @@ export const fetchSingles = async (): Promise<ISingle[]> => {
 
   try {
     singlesResponse = await request({
-      url: 'https://raw.githubusercontent.com/shawnrivers/nogizaka-data/master/src/json/singles.json',
+      url: "https://raw.githubusercontent.com/shawnrivers/nogizaka-data/master/src/json/singles.json",
       json: true,
     });
 
     convertedSingles = singlesResponse.map(singlesResponse => convertSingleResponse(singlesResponse));
   } catch (error) {
-    console.log('Error:', error);
+    console.log("Error:", error);
   }
 
   return convertedSingles;

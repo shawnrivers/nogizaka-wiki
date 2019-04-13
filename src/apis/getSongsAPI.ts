@@ -1,5 +1,5 @@
-import { SongResponse } from './types/SongsResponseTypes';
-import * as request from 'request';
+import { SongResponse } from "./types/SongsResponseTypes";
+import * as request from "request";
 
 const convertSongResponse = (songResponse: SongResponse) => {};
 
@@ -8,7 +8,7 @@ export const fetchSongs = async () => {
 
   request(
     {
-      url: 'https://raw.githubusercontent.com/shawnrivers/nogizaka-data/master/src/json/songs.json',
+      url: "https://raw.githubusercontent.com/shawnrivers/nogizaka-data/master/src/json/songs.json",
       json: true,
     },
     (error, response, body) => {

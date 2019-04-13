@@ -1,4 +1,4 @@
-import { COLOR, SIZE } from '../../../../utils/styles';
+import { COLOR, SIZE } from "../../../../utils/styles";
 
 // prettier-ignore
 export const getHeading = (number: string, title: string, release: string) => ({

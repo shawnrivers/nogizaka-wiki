@@ -1,4 +1,4 @@
-import { ICd } from './ICd';
+import { ICd } from "./ICd";
 
 type ISingleBehindPerformers = {
   trainees: string[];

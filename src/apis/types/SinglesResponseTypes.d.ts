@@ -1,4 +1,4 @@
-import { CdType, FocusPerformersType, APIResponseSongType } from '../../utils/constants';
+import { CdType, FocusPerformersType, APIResponseSongType } from "../../utils/constants";
 
 type CdArtwork = {
   type: CdType;

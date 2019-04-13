@@ -1,9 +1,9 @@
-import { ISingle } from '../../../models/ISingle';
-import { getHero } from './templates/hero';
-import { getHeading } from './templates/heading';
-import { separator } from './templates/separator';
-import { getSongList } from './templates/songList';
-import { SIZE } from '../../../utils/styles';
+import { ISingle } from "../../../models/ISingle";
+import { getHero } from "./templates/hero";
+import { getHeading } from "./templates/heading";
+import { separator } from "./templates/separator";
+import { getSongList } from "./templates/songList";
+import { SIZE } from "../../../utils/styles";
 
 export const getSingleFlexMessage = (single: ISingle) => {
   const { artworks, number, title, release, songs } = single;

@@ -1,4 +1,4 @@
-import { FukujinType, APIResponseSongType } from '../../utils/constants';
+import { FukujinType, APIResponseSongType } from "../../utils/constants";
 
 type SongCreators = {
   lyrics: string[];

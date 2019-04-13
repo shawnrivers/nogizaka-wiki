@@ -1,4 +1,4 @@
-import { ISingle } from '../../models/ISingle';
+import { ISingle } from "../../models/ISingle";
 
 export const getSingleByNumber = (singleNumber: string, singles: ISingle[]): ISingle | undefined => {
   for (const single of singles) {
@@ -22,5 +22,5 @@ export const getSingleTitle = (singleNumber: string, singles: ISingle[]): string
       return single.title;
     }
   }
-  return '';
+  return "";
 };
