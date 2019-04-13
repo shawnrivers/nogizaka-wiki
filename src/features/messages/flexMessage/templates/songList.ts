@@ -2,6 +2,7 @@ import { COLOR, SIZE } from '../../../../utils/styles';
 import { FocusPerformers } from '../../../../apis/types/SinglesResponseTypes';
 import { FocusPerformersType } from '../../../../utils/constants';
 import { ICdSong } from '../../../../models/ICd';
+import { separator } from './separator';
 
 const getSongItem = (number: number, title: string, type: string, focusPerformers: FocusPerformers) => {
   // prettier-ignore
@@ -10,46 +11,45 @@ const getSongItem = (number: number, title: string, type: string, focusPerformer
     "text": title,
     "wrap": true,
     "size": SIZE.SM,
-    "color": COLOR.Gray00,
-    "flex": 9
+    "color": COLOR.Gray00
   }];
 
-  if (type !== '' && focusPerformers.name.length !== 0) {
-    let focusPerformersText = focusPerformers.name.reduce((acc, curr) => acc + ' ' + curr);
+  if (type !== '' && focusPerformers !== null) {
+    if (focusPerformers.name.length !== 0) {
+      let focusPerformersText = focusPerformers.name.reduce((acc, curr) => acc + ', ' + curr);
 
-    focusPerformersText = type === FocusPerformersType.Center ? 'C: ' + focusPerformersText : focusPerformersText;
+      focusPerformersText = focusPerformers.type === FocusPerformersType.Center ? 'C: ' + focusPerformersText : focusPerformersText;
 
-    // prettier-ignore
-    titleBlock.push({
-      "type": "box",
-      "layout": "baseline",
-      "spacing": SIZE.SM,
-      "contents": [
-        {
-          "type": "text",
-          "text": type,
-          "wrap": true,
-          "size": SIZE.SM,
-          "color": COLOR.Gray01,
-          "flex": 1
-        },
-        {
-          "type": "text",
-          "text": focusPerformersText,
-          "wrap": true,
-          "size": SIZE.SM,
-          "color": COLOR.Gray01,
-          "flex": 1
-        }
-      ]
-    });
+      // prettier-ignore
+      titleBlock.push({
+        "type": "box",
+        "layout": "baseline",
+        "spacing": SIZE.SM,
+        "contents": [
+          {
+            "type": "text",
+            "text": type,
+            "size": SIZE.SM,
+            "color": COLOR.Gray01,
+            "flex": 1
+          },
+          {
+            "type": "text",
+            "text": focusPerformersText,
+            "size": SIZE.SM,
+            "color": COLOR.Gray01,
+            "flex": 2
+          }
+        ]
+      });
+    }
   }
 
   // prettier-ignore
   return {
     "type": "box",
-    "layout": "baseline",
-    "margin": SIZE.XL,
+    "layout": "horizontal",
+    "margin": SIZE.MD,
     "spacing": SIZE.SM,
     "contents": [
       {
@@ -72,18 +72,21 @@ const getSongItem = (number: number, title: string, type: string, focusPerformer
 };
 
 export const getSongList = (songs: ICdSong[]) => {
-  const songListContents = songs.map(song => {
+  const songListContents: any[] = songs.map(song => {
     const { number, title, type, focusPerformers } = song;
-
-    console.log(number, title, type, focusPerformers);
 
     return getSongItem(number, title, type, focusPerformers);
   });
+
+  for (let i = 0; i < songs.length - 1; i++) {
+    songListContents.splice( 2 * i + 1, 0, separator(SIZE.MD));
+  }
 
   // prettier-ignore
   return {
     "type": "box",
     "layout": "vertical",
+    "margin": SIZE.XXL,
     "contents": songListContents
   };
 };

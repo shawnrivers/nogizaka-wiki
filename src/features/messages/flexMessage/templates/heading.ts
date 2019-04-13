@@ -4,13 +4,14 @@ import { COLOR, SIZE } from '../../../../utils/styles';
 export const getHeading = (number: string, title: string, release: string) => ({
   "type": "box",
   "layout": "vertical",
+  "margin": SIZE.XXL,
   "contents": [
     {
       "type": "text",
       "text": `${number}. Single`,
       "weight": "bold",
       "color": COLOR.Gray01,
-      "size": SIZE.SM
+      "size": SIZE.MD
     },
     {
       "type": "text",
