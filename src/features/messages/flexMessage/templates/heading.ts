@@ -1,4 +1,5 @@
 import { COLOR, SIZE } from "../../../../utils/styles";
+import { toOrdinalNumber } from "../../../../utils/string";
 
 // prettier-ignore
 export const getHeading = (number: string, title: string, release: string) => ({
@@ -8,7 +9,7 @@ export const getHeading = (number: string, title: string, release: string) => ({
   "contents": [
     {
       "type": "text",
-      "text": `${number}. Single`,
+      "text": `${toOrdinalNumber(Number(number))}. Single`,
       "weight": "bold",
       "color": COLOR.Gray01,
       "size": SIZE.MD
