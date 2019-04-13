@@ -3,7 +3,7 @@ import * as line from '@line/bot-sdk';
 import { LINE_CONFIG } from './apis/lineAPI';
 import { fetchSingles } from './apis/getSinglesAPI';
 import { ISingle } from './models/ISingle';
-import { replyWithSingleTitle } from './features/reply/singles';
+import { replyWithSingleTitle, replyWithSingleFlexMessage } from './features/reply/singles';
 
 export const lineClient = new line.Client(LINE_CONFIG);
 
@@ -24,15 +24,9 @@ server.post('/webhook', line.middleware(LINE_CONFIG), async (request, response) 
 
     console.log('Received user input:', userInputText);
 
-    const message = replyWithSingleTitle(userInputText, singles);
+    const message = replyWithSingleFlexMessage(userInputText, singles);
 
     lineClient.replyMessage(event.replyToken, message);
-
-    // lineClient.replyMessage(event.replyToken, {
-    //   type: 'flex',
-    //   altText: '帰り道は遠回りしたくなる',
-    //   contents: getSongFlexMessage() as line.FlexContainer,
-    // });
   }
 });
 
