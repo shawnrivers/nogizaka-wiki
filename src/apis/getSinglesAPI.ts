@@ -21,12 +21,12 @@ export const fetchSingles = async (): Promise<ISingle[]> => {
   let convertedSingles: ISingle[] = [];
 
   try {
-    const singlesResponse = await request({
+    singlesResponse = await request({
       url: 'https://raw.githubusercontent.com/shawnrivers/nogizaka-data/master/src/json/singles.json',
       json: true,
     });
 
-    console.log('[fetchSingles] singlesResponse:', singlesResponse);
+    convertedSingles = singlesResponse.map(singlesResponse => convertSingleResponse(singlesResponse));
   } catch (error) {
     console.log('Error:', error);
   }
