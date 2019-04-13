@@ -1,4 +1,4 @@
-import { CdType, FocusPerformersType, SongType } from '../../utils/constants';
+import { CdType, FocusPerformersType, APIResponseSongType } from '../../utils/constants';
 
 type CdArtwork = {
   type: CdType;
@@ -23,7 +23,7 @@ type CdSong = {
   number: number;
   title: string;
   inCdType: CdType[];
-  type: SongType;
+  type: APIResponseSongType;
   artwork: string;
   focusPerformers: FocusPerformers;
 };

@@ -1,4 +1,4 @@
-import { FukujinType, SongType } from '../../utils/constants';
+import { FukujinType, APIResponseSongType } from '../../utils/constants';
 
 type SongCreators = {
   lyrics: string[];
@@ -27,7 +27,7 @@ export type SongResponse = {
   artwork: string;
   musicVideo: string;
   albums: string[];
-  type: SongType;
+  type: APIResponseSongType;
   creators: SongCreators;
   performers: SongPerformers;
   formations: SongFormations;
