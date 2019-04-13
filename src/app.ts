@@ -43,8 +43,6 @@ server.post('/webhook', line.middleware(LINE_CONFIG), async (request, response) 
     singles = await fetchSingles();
   }
 
-  console.log('Current singles data:', singles);
-
   for (const event of request.body.events) {
     const userInputText = event.message.text;
 
