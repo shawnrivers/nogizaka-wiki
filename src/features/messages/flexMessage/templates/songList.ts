@@ -77,6 +77,8 @@ export const getSongList = (songs: ICdSong[]) => {
   const songListContents = songs.map(song => {
     const { number, title, type, focusPerformers } = song;
 
+    console.log(number, title, type, focusPerformers);
+
     return getSongItem(number, title, type, focusPerformers);
   });
 
