@@ -7,6 +7,8 @@ import { ISingle } from './models/ISingle';
 
 export const lineClient = new line.Client(LINE_CONFIG);
 
+let singles: ISingle[] = [];
+
 const server = express();
 
 const replyWithSingleTitle = (query: string, singles: ISingle[]): line.TextMessage => {
@@ -36,9 +38,12 @@ const replyWithSingleTitle = (query: string, singles: ISingle[]): line.TextMessa
 server.post('/webhook', line.middleware(LINE_CONFIG), async (request, response) => {
   response.sendStatus(200);
 
-  const singles = await fetchSingles();
+  if (singles.length === 0) {
+    console.log('Fetching singles data...');
+    singles = await fetchSingles();
+  }
 
-  console.log('singles data:', singles);
+  console.log('Current singles data:', singles);
 
   for (const event of request.body.events) {
     const userInputText = event.message.text;
