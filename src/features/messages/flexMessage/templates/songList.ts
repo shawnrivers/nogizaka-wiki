@@ -32,14 +32,14 @@ const getSongItem = (number: number, title: string, type: string, focusPerformer
             "text": type,
             "size": SIZE.SM,
             "color": COLOR.Gray01,
-            "flex": 1
+            "flex": 2
           },
           {
             "type": "text",
             "text": focusPerformersText,
             "size": SIZE.SM,
             "color": COLOR.Gray01,
-            "flex": 2
+            "flex": 5
           }
         ]
       });
