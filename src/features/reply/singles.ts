@@ -28,7 +28,10 @@ export const replyWithSingleFlexMessage = (query: string, singles: ISingle[]): F
   if (queryInt && queryInt > 0 && queryInt < 23) {
     const single = getSingleByNumber(query, singles);
 
+    
     if (single) {
+      console.log('single Flex Message content:', getSingleFlexMessage(single));
+
       return {
         type: 'flex',
         altText: single.title,
