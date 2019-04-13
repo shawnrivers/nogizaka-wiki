@@ -1,8 +1,8 @@
 // prettier-ignore
-export const getHero = () => {
+export const getHero = (artworkUrl: string) => {
   return {
     "type": "image",
-    "url": "https://raw.githubusercontent.com/shawnrivers/nogizaka-data/master/src/images/artworks/singles/22/A_medium.jpg",
+    "url": artworkUrl,
     "size": "full",
     "aspectRatio": "1:1",
     "aspectMode": "cover",

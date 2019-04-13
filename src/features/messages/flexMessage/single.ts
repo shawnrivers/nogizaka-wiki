@@ -5,7 +5,8 @@ import { separator } from './templates/separator';
 import { getSongList } from './templates/songList';
 
 export const getSingleFlexMessage = (single: ISingle) => {
-  const { number, title, release, songs } = single;
+  const { artworks, number, title, release, songs } = single;
+  const artworkUrl = artworks[0].urls.medium;
 
   // prettier-ignore
   return {
@@ -15,7 +16,7 @@ export const getSingleFlexMessage = (single: ISingle) => {
         "separator": true
       }
     },
-    "hero": getHero(),
+    "hero": getHero(artworkUrl),
     "body": {
       "type": "box",
       "layout": "vertical",
