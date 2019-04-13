@@ -3,15 +3,13 @@ import * as line from '@line/bot-sdk';
 import { LINE_CONFIG } from './apis/lineAPI';
 import { fetchSingles } from './apis/getSinglesAPI';
 import { ISingle } from './models/ISingle';
-import { replyWithSingleTitle } from './features/singles';
+import { replyWithSingleTitle } from './features/reply/singles';
 
 export const lineClient = new line.Client(LINE_CONFIG);
 
 let singles: ISingle[] = [];
 
 const server = express();
-
-
 
 server.post('/webhook', line.middleware(LINE_CONFIG), async (request, response) => {
   response.sendStatus(200);

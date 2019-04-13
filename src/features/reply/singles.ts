@@ -1,21 +1,17 @@
-import { TextMessage } from '@line/bot-sdk'
-import { ISingle } from "../models/ISingle";
+import { TextMessage } from '@line/bot-sdk';
+import { ISingle } from '../../models/ISingle';
+import { getSingleTitle } from '../search/singles';
 
 export const replyWithSingleTitle = (query: string, singles: ISingle[]): TextMessage => {
   const queryInt = parseInt(query);
 
   if (queryInt && queryInt > 0 && queryInt < 23) {
-    for (const single of singles) {
-      if (single.number === query) {
-        return {
-          type: 'text',
-          text: single.title,
-        };
-      }
-    }
+    const singleTitle = getSingleTitle(query, singles);
+    const replyText = singleTitle !== '' ? singleTitle : "Sorry, didn't match.";
+
     return {
       type: 'text',
-      text: "Sorry, didn't match.",
+      text: replyText,
     };
   } else {
     return {
