@@ -65,9 +65,7 @@ const getSongItem = (number: number, title: string, type: string, focusPerformer
         "margin": SIZE.SM,
         "spacing": SIZE.SM,
         "flex": 9,
-        "contents": [
-          titleBlock
-        ]
+        "contents": titleBlock
       }
     ]
   };
