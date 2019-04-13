@@ -1,3 +1,5 @@
+import { COLOR, SIZE } from '../../../../utils/styles';
+
 // prettier-ignore
 export const getHeading = (number: string, title: string, release: string) => ({
   "type": "box",
@@ -7,36 +9,37 @@ export const getHeading = (number: string, title: string, release: string) => ({
       "type": "text",
       "text": `${number}. Single`,
       "weight": "bold",
-      "color": "#FF705C",
-      "size": "sm"
+      "color": COLOR.Gray01,
+      "size": SIZE.SM
     },
     {
       "type": "text",
       "text": title,
       "weight": "bold",
-      "size": "xxl",
-      "margin": "md",
+      "size": SIZE.XXL,
+      "margin": SIZE.MD,
+      "color": COLOR.Gray00,
       "wrap": true
     },
     {
       "type": "box",
       "layout": "baseline",
-      "spacing": "sm",
-      "margin": "md",
+      "spacing": SIZE.SM,
+      "margin": SIZE.MD,
       "contents": [
         {
           "type": "text",
           "text": "Release",
-          "color": "#aaaaaa",
-          "size": "sm",
+          "color": COLOR.Gray01,
+          "size": SIZE.SM,
           "flex": 1
         },
         {
           "type": "text",
           "text": release,
           "wrap": true,
-          "size": "sm",
-          "color": "#666666",
+          "size": SIZE.SM,
+          "color": COLOR.Gray00,
           "flex": 3
         }
       ]
