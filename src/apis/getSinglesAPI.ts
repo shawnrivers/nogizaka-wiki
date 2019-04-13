@@ -29,6 +29,8 @@ export const fetchSingles = async (): Promise<ISingle[]> => {
       if (!error && response.statusCode === 200) {
         singlesResponse = body;
 
+        console.log('[fetchSingles] singlesResponse:', singlesResponse);
+
         convertedSingles = singlesResponse.map(singleResponse => convertSingleResponse(singleResponse));
       }
     },
