@@ -1,7 +1,7 @@
 import { SIZE } from '../../../../utils/styles';
 
 // prettier-ignore
-export const separator = {
+export const separator = (size: SIZE) => ({
   "type": "separator",
-  "margin": SIZE.XL
-};
+  "margin": size
+});
