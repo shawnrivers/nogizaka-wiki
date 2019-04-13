@@ -8,7 +8,7 @@ export const getHero = (artworkUrl: string) => {
     "aspectMode": "cover",
     "action": {
       "type": "uri",
-      "uri": "http://linecorp.com/"
+      "uri": "http://www.nogizaka46.com/discography/category/?single"
     }
   };
 }
