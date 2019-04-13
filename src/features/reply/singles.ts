@@ -30,7 +30,7 @@ export const replyWithSingleFlexMessage = (query: string, singles: ISingle[]): F
 
     
     if (single) {
-      console.log('single Flex Message content:', getSingleFlexMessage(single));
+      console.log('single Flex Message content:', (JSON.stringify(getSingleFlexMessage(single), null, 2)));
 
       return {
         type: 'flex',
