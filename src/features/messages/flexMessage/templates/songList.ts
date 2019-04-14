@@ -44,6 +44,22 @@ const getSongItem = (number: number, title: string, type: string, focusPerformer
           }
         ]
       });
+    } else {
+      // prettier-ignore
+      titleBlock.push({
+        "type": "box",
+        "layout": "baseline",
+        "spacing": SIZE.SM,
+        "contents": [
+          {
+            "type": "text",
+            "text": type,
+            "size": SIZE.SM,
+            "color": COLOR.Gray01,
+            "flex": 2
+          }
+        ]
+      });
     }
   }
 
