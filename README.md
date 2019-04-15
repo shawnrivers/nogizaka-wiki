@@ -10,7 +10,7 @@ Profile images and CD artworks © 乃木坂LLC.
 
 Just scan the QR code below in LINE and add it to your contact.
 
-![Nogizaka Wiki](https://qr-official.line.me/M/9siVMuVKpz.png)
+![Nogizaka Wiki](https://user-images.githubusercontent.com/23146992/56123230-09369b80-5faf-11e9-8cbe-8954cf3e409f.png)
 
 ## Technologies
 
