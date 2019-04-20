@@ -2,5 +2,3 @@
 /dist
 /src/temp
 .vscode
-.prettierrc.js
-.eslintrc
