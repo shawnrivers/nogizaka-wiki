@@ -1,14 +1,5 @@
 import { CdType, FocusPerformersType, APIResponseSongType } from "../../utils/constants";
 
-type CdArtwork = {
-  type: CdType;
-  urls: {
-    large: string;
-    medium: string;
-    small: string;
-  };
-};
-
 type FocusPerformers = {
   type: FocusPerformersType;
   name: string[];
@@ -32,7 +23,13 @@ type CdResponse = {
   title: string;
   number: string;
   release: string;
-  artworks: CdArtwork[];
+  artworks: {
+    [type: string]: {
+      large: string;
+      medium: string;
+      small: string;
+    };
+  };
   shopping: Site[];
   songs: CdSong[];
 };

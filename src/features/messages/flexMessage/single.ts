@@ -7,7 +7,7 @@ import { SIZE } from "../../../utils/styles";
 
 export const getSingleFlexMessage = (single: ISingle) => {
   const { artworks, number, title, release, songs } = single;
-  const artworkUrl = artworks[0].urls.medium;
+  const artworkUrl = Object.values(artworks)[0].medium;
 
   // prettier-ignore
   return {

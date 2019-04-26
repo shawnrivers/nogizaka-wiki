@@ -28,7 +28,13 @@ export type ICd = {
   title: string;
   number: string;
   release: string;
-  artworks: ICdArtworks[];
+  artworks: {
+    [type: string]: {
+      large: string;
+      medium: string;
+      small: string;
+    };
+  };
   shopping: ISite[];
   songs: ICdSong[];
 };
