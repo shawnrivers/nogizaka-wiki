@@ -15,7 +15,11 @@ type CdSong = {
   title: string;
   inCdType: CdType[];
   type: APIResponseSongType;
-  artwork: string;
+  artwork: {
+    large: string;
+    medium: string;
+    small: string;
+  };
   focusPerformers: FocusPerformers;
 };
 

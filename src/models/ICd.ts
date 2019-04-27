@@ -15,7 +15,11 @@ export type ICdSong = {
   title: string;
   inCdType: CdType[];
   type: SongType;
-  artwork: string;
+  artwork: {
+    large: string;
+    medium: string;
+    small: string;
+  };
   focusPerformers: IFocusPerformers;
 };
 
